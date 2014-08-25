@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>一、登录统计</h3>
+<table>
+	<thead>
+		<th>区域</th>
+		<th>用户数</th>
+		<th>登录用户数</th>
+		<th>登录次数</th>
+	</thead>
+	<tbody>
+		<foreach name='data1' item='v1'>
+		<tr>
+			<td>{$v1.name}</td>
+			<td>{$v1.yhs}</td>
+			<td>{$v1.dlyhs}</td>
+			<td>{$v1.dlcs}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+<h3>二、公告统计</h3>
+<table>
+	<thead>
+		<tr>
+        	<th>区域</th>
+        	<th>新增公告数量</th>
+        	<th>发布公告用户数</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='data2' item='v2'>
+		<tr>
+			<td>{$v2.name}</td>
+			<td>{$v2.noticeCount}</td>
+			<td>{$v2.userCount}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+<h3>三、任务统计</h3>
+<table>
+	<thead>
+		<th>区域</th>
+		<th>新增任务数</th>
+		<th>新增任务农技管理员数据</th>
+		<th>新增任务农技员数</th>
+	</thead>
+	<tbody>
+		<foreach name='data3' item='v3'>
+		<tr>
+			<td>{$v3.name}</td>
+			<td>{$v3.a}</td>
+			<td>{$v3.b}</td>
+			<td>{$v3.c}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+<h3>四、日志统计</h3>
+<table>
+	<thead>
+		<th>区域</th>
+		<th>新增日志数</th>
+		<th>发布日志用户数</th>
+		<th>新增文字条数</th>
+		<th>新增图片数</th>
+		<th>新增音频数</th>
+	</thead>
+	<tbody>
+		<foreach name='data4' item='v4'>
+		<tr>
+			<td>{$v4.name}</td>
+			<td>{$v4.a}</td>
+			<td>{$v4.b}</td>
+			<td>{$v4.c}</td>
+			<td>{$v4.d}</td>
+			<td>{$v4.e}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+<h3>五、田园相册统计</h3>
+<table>
+	<thead>
+		<th>区域</th>
+		<th>新增照片数</th>
+		<th>发布照片用户数</th>
+		<th>点赞数</th>
+		<th>评论数</th>
+	</thead>
+	<tbody>
+		<foreach name='data5' item='v5'>
+		<tr>
+			<td>{$v5.name}</td>
+			<td>{$v5.a}</td>
+			<td>{$v5.b}</td>
+			<td>{$v5.c}</td>
+			<td>{$v5.d}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+<h3>六、至今未登录的用户</h3>
+<table>
+	<thead>
+		<th>用户名</th>
+		<th>地区</th>
+		<th>部门</th>
+		<th>年龄</th>
+	</thead>
+	<tbody>
+		<foreach name='data6' item='v6'>
+		<tr>
+			<td>{$v6.a}</td>
+			<td>{$v6.b}</td>
+			<td>{$v6.c}</td>
+			<td>{$v6.d}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+
+<h3>七、活跃用户排行</h3>
+<volist name="data73" id="vo">
+<table>
+	<thead>
+		<tr>
+			<th>{$key}</th>
+		</tr>
+		<tr>
+			<th>用户名</th>
+			<th>发布日志数量</th>
+			<th>登录次数</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='vo' item='v73'>
+		<tr>
+			<td>{$v73.real_name}</td>
+			<td>{$v73.worklogCount}</td>
+			<td>{$v73.logCount}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+
+</volist>
+
+<!-- 
+<h3>七、活跃用户排行</h3>
+<table>
+	<thead>
+		<tr>
+			<th>固镇县</th>
+		</tr>
+		<tr>
+			<th>用户名</th>
+			<th>发布日志数量</th>
+			<th>登录次数</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='data7' item='v7'>
+		<tr>
+			<td>{$v7.real_name}</td>
+			<td>{$v7.worklogCount}</td>
+			<td>{$v7.logCount}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+<table>
+	<thead>
+		<tr>
+			<th>怀远县</th>
+		</tr>
+		<tr>
+			<th>用户名</th>
+			<th>发布日志数量</th>
+			<th>登录次数</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='data8' item='v8'>
+		<tr>
+			<td>{$v8.real_name}</td>
+			<td>{$v8.worklogCount}</td>
+			<td>{$v8.logCount}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+<table>
+	<thead>
+		<tr>
+			<th>五河县</th>
+		</tr>
+		<tr>
+			<th>用户名</th>
+			<th>发布日志数量</th>
+			<th>登录次数</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='data9' item='v9'>
+		<tr>
+			<td>{$v9.real_name}</td>
+			<td>{$v9.worklogCount}</td>
+			<td>{$v9.logCount}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>泰和县</th>
+		</tr>
+		<tr>
+			<th>用户名</th>
+			<th>发布日志数量</th>
+			<th>登录次数</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='data10' item='v10'>
+		<tr>
+			<td>{$v10.real_name}</td>
+			<td>{$v10.worklogCount}</td>
+			<td>{$v10.logCount}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+ -->
+<h3>八、分数段汇总日志数</h3>
+<table>
+	<thead>
+		<tr>
+			<th>6：00 ~ 9：00</th>
+			<th>9：00 ~ 12：00</th>
+			<th>12：00 ~15：00</th>
+			<th>15：00 ~18：00</th>
+			<th>18：00 ~ 第二天6:00</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='data12' item='v12'>
+		<tr><td>{$v12.@sixToNight}</td>
+			<td>{$v12.@nightTo12}</td>
+			<td>{$v12.@twelveTofiften}</td>
+			<td>{$v12.@fiftenToEighten}</td>
+			<td>{$v12.@eightenTo24+@zeroToSix}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+<h3>九、本周累计已登录的用户数量</h3>
+<table>
+	<thead>
+		<tr>
+			<th>地区</th>
+			<th>日志数量</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name='data11' item='v11'>
+		<tr>
+			<td>{$v11.name}</td>
+			<td>{$v11.b}</td>
+		</tr>
+		</foreach>
+	</tbody>
+</table>
+
+<!-- 
+ -->
+</body>
+</html>
