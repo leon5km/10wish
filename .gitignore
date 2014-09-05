@@ -1,2 +1,4 @@
 ﻿APP/Runtime/
 APP/Runtime/
+Public/Uploads/
+*.php~

@@ -15,10 +15,7 @@ class LoginAction extends Action{
 	 */
 	public function login(){
 		if (!IS_POST)halt('页面不存在');
-		var_dump($_POST);
 		
-		var_dump(I('code','','md5'));
-		var_dump($_SESSION['verify']);
 		if (md5(I('code'))!=$_SESSION['verify']) {
 			$this->error('验证码错误');
 		}
@@ -28,7 +25,7 @@ class LoginAction extends Action{
 		
 		$user = M('user')->where(array('username'=>$username))->find();
 		
-		if (!user||$user['password']!=$pwd){
+		if (!user||$user['PASSWORD']!=$pwd){
 			$this->error('账号或密码错误！');
 		}
 		if ($user['lock'])$this->error('用户被锁定');
